@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
 
-  s.source       = { :git => "http://github.com/suguru/Cheetah.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/suguru/Cheetah.git", :tag => "0.1.0" }
 
   s.source_files  = "Classes", "Cheetah/*.swift"
 
