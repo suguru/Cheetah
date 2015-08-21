@@ -40,6 +40,7 @@ Cheetah has several methods to animate properties easily. You can also animate y
 - frame
 - alpha
 - backgroundColor
+- textColor
 - borderColor
 - borderWidth
 - borderRadius

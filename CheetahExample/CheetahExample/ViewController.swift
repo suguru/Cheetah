@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Create view
-        let box = UIView(frame:CGRectMake(100,100,50,50))
+        let box = UIView(frame:CGRectMake(50,50,50,50))
         box.backgroundColor = UIColor.blueColor()
         view.addSubview(box)
         
@@ -84,7 +84,38 @@ class ViewController: UIViewController {
             .run()
             .forever
         */
-        box.cheetah.rotate(M_PI_2).run().forever
+        box.cheetah
+            .rotate(M_PI_2)
+            .run()
+            .forever
+        
+        let box2 = UIView(frame: CGRectMake(150, 50, 50, 50))
+        box2.backgroundColor = UIColor.blueColor()
+        box2.cheetah
+            .borderWidth(5)
+            .borderColor(UIColor.redColor())
+            .cornerRadius(25)
+            .wait()
+            .borderWidth(0)
+            .borderColor(UIColor.blackColor())
+            .cornerRadius(0)
+            .run()
+            .forever
+        
+        view.addSubview(box2)
+        
+        let label = UILabel(frame: CGRectMake(200, 100, 200, 40))
+        label.text = "HELLO CHEETAH!"
+        label.cheetah
+            .move(0, 30).duration(0.5).easeOutBack
+            .textColor(UIColor.redColor())
+            .wait(1)
+            .move(0, -30).duration(0.5).easeOutBack
+            .textColor(UIColor.blueColor())
+            .wait(1)
+            .run()
+            .forever
+        view.addSubview(label)
 
         for i in 0...easeOuts.count-1 {
             let ebox = UIView(frame: CGRectMake(20, 200 + 25 * CGFloat(i), 20, 20))

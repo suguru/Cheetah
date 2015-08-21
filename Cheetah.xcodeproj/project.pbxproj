@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F8992141B86066400A92F18 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992131B86066400A92F18 /* Bezier.swift */; };
+		6F89921A1B87762200A92F18 /* CheetahLabelProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992191B87762200A92F18 /* CheetahLabelProperties.swift */; };
 		6F96CF6B1B8436F80014443A /* Cheetah.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F96CF6A1B8436F80014443A /* Cheetah.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F96CF721B8436F80014443A /* Cheetah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F96CF671B8436F80014443A /* Cheetah.framework */; };
 		6F96CF771B8436F80014443A /* CheetahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CF761B8436F80014443A /* CheetahTests.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		6F8992131B86066400A92F18 /* Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
+		6F8992191B87762200A92F18 /* CheetahLabelProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheetahLabelProperties.swift; sourceTree = "<group>"; };
 		6F96CF671B8436F80014443A /* Cheetah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cheetah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F96CF6A1B8436F80014443A /* Cheetah.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cheetah.h; sourceTree = "<group>"; };
 		6F96CF6C1B8436F80014443A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				6F96CFB21B8445560014443A /* CheetahProperties.swift */,
 				6F96CFC01B85674A0014443A /* CheetahLayerProperties.swift */,
 				6F96CFBE1B848CA90014443A /* CheetahViewProperties.swift */,
+				6F8992191B87762200A92F18 /* CheetahLabelProperties.swift */,
 				6F96CFBC1B8474720014443A /* Calculations.swift */,
 				6F8992131B86066400A92F18 /* Bezier.swift */,
 				6F96CFB71B845CDA0014443A /* Easings.swift */,
@@ -227,6 +230,7 @@
 				6F8992141B86066400A92F18 /* Bezier.swift in Sources */,
 				6F96CFB81B845CDA0014443A /* Easings.swift in Sources */,
 				6F96CFC31B85B8690014443A /* CheetahGroup.swift in Sources */,
+				6F89921A1B87762200A92F18 /* CheetahLabelProperties.swift in Sources */,
 				6F96CFBD1B8474720014443A /* Calculations.swift in Sources */,
 				6F96CFB31B8445560014443A /* CheetahProperties.swift in Sources */,
 				6F96CFA91B84374E0014443A /* Cheetah.swift in Sources */,

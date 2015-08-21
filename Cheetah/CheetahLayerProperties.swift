@@ -74,3 +74,67 @@ class CheetahLayerScaleProperty: CheetahCGPointProperty {
     }
     
 }
+
+class CheetahLayerBorderWidthProperty: CheetahCGFloatProperty {
+    
+    init(view: UIView!, borderWidth: CGFloat) {
+        super.init()
+        self.view = view
+        to = borderWidth
+    }
+    
+    override func prepare() {
+        super.prepare()
+        from = view.layer.borderWidth
+    }
+    
+    override func update() {
+        view.layer.borderWidth = calculateCGFloat(from: from, to: toCalc, rate: current, easing: easing)
+    }
+    
+}
+
+class CheetahLayerCornerRadiusProperty: CheetahCGFloatProperty {
+    
+    init(view: UIView!, cornerRadius: CGFloat) {
+        super.init()
+        self.view = view
+        to = cornerRadius
+    }
+    
+    override func prepare() {
+        super.prepare()
+        from = view.layer.cornerRadius
+    }
+    
+    override func update() {
+        view.layer.cornerRadius = calculateCGFloat(from: from, to: toCalc, rate: current, easing: easing)
+    }
+    
+}
+
+class CheetahLayerBorderColorProperty: CheetahUIColorProperty {
+    
+    init(view: UIView!, borderColor: UIColor) {
+        super.init()
+        self.view = view
+        self.to = borderColor
+    }
+    
+    override func prepare() {
+        super.prepare()
+        if let borderColor = view.layer.borderColor {
+            from = UIColor(CGColor: borderColor)
+        } else {
+            from = UIColor.blackColor()
+        }
+    }
+    
+    override func update() {
+        let color = calculateUIColor(from: from, to: toCalc, rate: current, easing: easing)
+        view.layer.borderColor = color.CGColor
+    }
+    
+}
+
+

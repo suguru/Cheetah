@@ -81,6 +81,26 @@ public class Cheetah {
         return self
     }
     
+    public func borderWidth(borderWidth: CGFloat) -> Cheetah {
+        addProperty(CheetahLayerBorderWidthProperty(view: view, borderWidth: borderWidth))
+        return self
+    }
+    
+    public func borderColor(borderColor: UIColor) -> Cheetah {
+        addProperty(CheetahLayerBorderColorProperty(view: view, borderColor: borderColor))
+        return self
+    }
+    
+    public func cornerRadius(cornerRadius: CGFloat) -> Cheetah {
+        addProperty(CheetahLayerCornerRadiusProperty(view: view, cornerRadius: cornerRadius))
+        return self
+    }
+    
+    public func textColor(color: UIColor) -> Cheetah {
+        addProperty(CheetahTextColorProperty(view: view, textColor: color))
+        return self
+    }
+    
     // MARK: Animation anchor
     
     public func anchor(point: CGPoint) -> Cheetah {
