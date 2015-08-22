@@ -32,73 +32,59 @@ public class Cheetah {
     // MARK: Animations
     
     public func size(width: CGFloat, _ height: CGFloat, relative: Bool = false) -> Cheetah {
-        addProperty(CheetahViewSizeProperty(view: view, size: CGSize(width: width, height: height), relative: relative))
-        return self
+        return addProperty(CheetahViewSizeProperty(view: view, size: CGSize(width: width, height: height), relative: relative))
     }
     
     public func frame(frame: CGRect) -> Cheetah {
-        addProperty(CheetahViewFrameProperty(view: view, frame: frame))
-        return self
+        return addProperty(CheetahViewFrameProperty(view: view, frame: frame))
     }
     
     public func position(x: CGFloat, _ y: CGFloat) -> Cheetah {
-        addProperty(CheetahLayerPositionProperty(view: view, position: CGPoint(x: x, y: y)))
-        return self
+        return addProperty(CheetahLayerPositionProperty(view: view, position: CGPoint(x: x, y: y)))
     }
     
     public func move(x: CGFloat, _ y: CGFloat) -> Cheetah {
-        addProperty(CheetahLayerPositionProperty(view: view, position: CGPoint(x: x, y: y), relative: true))
-        return self
+        return addProperty(CheetahLayerPositionProperty(view: view, position: CGPoint(x: x, y: y), relative: true))
     }
     
     public func rotation(angle: Double) -> Cheetah {
-        addProperty(CheetahLayerRotationProperty(view: view, rotation: CGFloat(angle)))
-        return self
+        return addProperty(CheetahLayerRotationProperty(view: view, rotation: CGFloat(angle)))
     }
     
     public func rotate(angle: Double) -> Cheetah {
-        addProperty(CheetahLayerRotationProperty(view: view, rotation: CGFloat(angle), relative: true))
-        return self
+        return addProperty(CheetahLayerRotationProperty(view: view, rotation: CGFloat(angle), relative: true))
     }
     
     public func scale(scale: CGFloat) -> Cheetah {
-        addProperty(CheetahLayerScaleProperty(view: view, scale: CGPoint(x: scale, y: scale)))
-        return self
+        return addProperty(CheetahLayerScaleProperty(view: view, scale: CGPoint(x: scale, y: scale)))
     }
     
     public func scaleXY(x: CGFloat, _ y: CGFloat) -> Cheetah {
-        addProperty(CheetahLayerScaleProperty(view: view, scale: CGPoint(x: x, y: y)))
-        return self
+        return addProperty(CheetahLayerScaleProperty(view: view, scale: CGPoint(x: x, y: y)))
     }
     
     public func alpha(alpha: CGFloat) -> Cheetah {
-        addProperty(CheetahViewAlphaProperty(view: view, alpha: alpha))
-        return self
+        return addProperty(CheetahViewAlphaProperty(view: view, alpha: alpha))
     }
     
     public func backgroundColor(color: UIColor) -> Cheetah {
-        addProperty(CheetahViewBackgroundColorProperty(view: view, color: color))
-        return self
+        return addProperty(CheetahViewBackgroundColorProperty(view: view, color: color))
     }
     
     public func borderWidth(borderWidth: CGFloat) -> Cheetah {
-        addProperty(CheetahLayerBorderWidthProperty(view: view, borderWidth: borderWidth))
-        return self
+        return addProperty(CheetahLayerBorderWidthProperty(view: view, borderWidth: borderWidth))
     }
     
     public func borderColor(borderColor: UIColor) -> Cheetah {
-        addProperty(CheetahLayerBorderColorProperty(view: view, borderColor: borderColor))
-        return self
+        return addProperty(CheetahLayerBorderColorProperty(view: view, borderColor: borderColor))
     }
     
     public func cornerRadius(cornerRadius: CGFloat) -> Cheetah {
-        addProperty(CheetahLayerCornerRadiusProperty(view: view, cornerRadius: cornerRadius))
-        return self
+        return addProperty(CheetahLayerCornerRadiusProperty(view: view, cornerRadius: cornerRadius))
     }
     
     public func textColor(color: UIColor) -> Cheetah {
-        addProperty(CheetahTextColorProperty(view: view, textColor: color))
-        return self
+        return addProperty(CheetahTextColorProperty(view: view, textColor: color))
     }
     
     // MARK: Animation anchor
@@ -299,12 +285,13 @@ public class Cheetah {
     }
     
     // Add property to current group
-    public func addProperty(prop: CheetahProperty) {
+    public func addProperty(prop: CheetahProperty) -> Cheetah {
         if let group = groups.last {
             prop.group = group
             prop.duration = group.duration
             group.properties.append(prop)
         }
+        return self
     }
     
     // Add new group to groups
