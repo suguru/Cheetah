@@ -34,8 +34,10 @@ Properties
 Cheetah has several methods to animate properties easily. You can also animate your own properties with extending CheetahProperty.
 
 - move
-- position
+- position (absolute of move)
 - scale
+- rotate
+- rotation (absolute of rotate)
 - size
 - frame
 - alpha
@@ -52,7 +54,11 @@ Parallel execution
 Cheetah groups animation properties and execute them at once.
 
 ```swift
-view.move(100, 0).rotate(M_PI * 2).scale(1.5).run()
+view.cheetah
+  .move(100, 0)
+  .rotate(M_PI * 2)
+  .scale(1.5)
+  .run()
 ```
 
 ![Parallel](https://suguru.github.io/Cheetah/images/parallel_move.gif)
@@ -148,5 +154,7 @@ Supported eassing equations
 
 Animate custom properties
 ----
+
+You can extend CheetahProperty to animate custom properties. You can refer CheetahViewProperties.swift and CheetahLayerProperties.swift.
 
 :)
