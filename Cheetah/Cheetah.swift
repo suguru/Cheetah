@@ -11,12 +11,13 @@ import UIKit
 public class Cheetah {
     
     weak var view: UIView?
-    weak var link: CADisplayLink?
     
-    var lastLoopTime = CFTimeInterval(0)
+    var id: UInt32 = 0
     var groups: [CheetahGroup]
     var groupIndex: Int = 0
     var repeatCount: Int = 0
+    var paused: Bool = false
+    var running: Bool = false
     
     init(view: UIView) {
         self.view = view
@@ -190,41 +191,41 @@ public class Cheetah {
     }
     
     // Remove all animations
-    public func remove() {
-        // cancel run loop
-        link?.invalidate()
-        link = nil
+    public func remove() -> Cheetah {
         // remove all items
         groups = [CheetahGroup(view: view)]
+        running = false
+        groupIndex = 0
+        return self
     }
     
     // MARK: Playing controls
     
     // Start configured animation
     public func run() -> Cheetah {
+        if running {
+            return self
+        }
+        running = true
         // set index to zero
         groupIndex = 0
         // mark start time
-        lastLoopTime = CACurrentMediaTime()
         // Prepare first group
         prepare(groups.first)
-        // start run loop
-        let link = CADisplayLink(target: self, selector: "update:")
-        link.frameInterval = 1
-        link.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
-        self.link = link
+        CheetahManager.sharedInstance.add(self)
+        // Add next group to grouping current properties
+        addGroup()
         return self
     }
     
     // Pause action
     public func pause() {
-        link?.paused = true
+        paused = true
     }
     
     // Resume action
     public func resume() {
-        lastLoopTime = CACurrentMediaTime()
-        link?.paused = false
+        paused = false
     }
     
     // Resume action
@@ -259,22 +260,27 @@ public class Cheetah {
         group.prepare()
     }
     
-    // Runloop
-    @objc func update(link: CADisplayLink) {
+    // proceed animation
+    // returns true when completed
+    func proceed(dt: CFTimeInterval) -> Bool {
         if view == nil {
             // end animation if view is destructed
-            remove()
-            return
+            return true
+        }
+        if paused {
+            // not proceed when paused
+            return false
+        }
+        if groupIndex >= groups.count {
+            // end if group index is over
+            return true
         }
         // duration between each run loop
-        let dt = link.timestamp - lastLoopTime
         let group = groups[groupIndex]
-        lastLoopTime = link.timestamp
         if group.proceed(dt) {
             if ++groupIndex >= groups.count {
                 if repeatCount == 0 {
-                    remove()
-                    return
+                    return true
                 }
                 groupIndex = 0
                 repeatCount--
@@ -282,6 +288,7 @@ public class Cheetah {
             // prepare next group
             prepare(groups[groupIndex])
         }
+        return false
     }
     
     // Add property to current group

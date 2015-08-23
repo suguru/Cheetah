@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F8992141B86066400A92F18 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992131B86066400A92F18 /* Bezier.swift */; };
 		6F89921A1B87762200A92F18 /* CheetahLabelProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992191B87762200A92F18 /* CheetahLabelProperties.swift */; };
+		6F89921C1B8832F800A92F18 /* CheetahManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89921B1B8832F800A92F18 /* CheetahManager.swift */; };
 		6F96CF6B1B8436F80014443A /* Cheetah.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F96CF6A1B8436F80014443A /* Cheetah.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F96CF721B8436F80014443A /* Cheetah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F96CF671B8436F80014443A /* Cheetah.framework */; };
 		6F96CF771B8436F80014443A /* CheetahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CF761B8436F80014443A /* CheetahTests.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		6F8992131B86066400A92F18 /* Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
 		6F8992191B87762200A92F18 /* CheetahLabelProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheetahLabelProperties.swift; sourceTree = "<group>"; };
+		6F89921B1B8832F800A92F18 /* CheetahManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheetahManager.swift; sourceTree = "<group>"; };
 		6F96CF671B8436F80014443A /* Cheetah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cheetah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F96CF6A1B8436F80014443A /* Cheetah.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cheetah.h; sourceTree = "<group>"; };
 		6F96CF6C1B8436F80014443A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				6F96CF6A1B8436F80014443A /* Cheetah.h */,
 				6F96CFA81B84374E0014443A /* Cheetah.swift */,
+				6F89921B1B8832F800A92F18 /* CheetahManager.swift */,
 				6F96CFC21B85B8690014443A /* CheetahGroup.swift */,
 				6F96CFB21B8445560014443A /* CheetahProperties.swift */,
 				6F96CFC01B85674A0014443A /* CheetahLayerProperties.swift */,
@@ -101,8 +104,8 @@
 				6F96CFBC1B8474720014443A /* Calculations.swift */,
 				6F8992131B86066400A92F18 /* Bezier.swift */,
 				6F96CFB71B845CDA0014443A /* Easings.swift */,
-				6F96CF6C1B8436F80014443A /* Info.plist */,
 				6F96CFAA1B8437A10014443A /* UIView+CheetahAnimation.swift */,
+				6F96CF6C1B8436F80014443A /* Info.plist */,
 			);
 			path = Cheetah;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				6F96CFAB1B8437A10014443A /* UIView+CheetahAnimation.swift in Sources */,
 				6F96CFC11B85674A0014443A /* CheetahLayerProperties.swift in Sources */,
 				6F8992141B86066400A92F18 /* Bezier.swift in Sources */,
+				6F89921C1B8832F800A92F18 /* CheetahManager.swift in Sources */,
 				6F96CFB81B845CDA0014443A /* Easings.swift in Sources */,
 				6F96CFC31B85B8690014443A /* CheetahGroup.swift in Sources */,
 				6F89921A1B87762200A92F18 /* CheetahLabelProperties.swift in Sources */,

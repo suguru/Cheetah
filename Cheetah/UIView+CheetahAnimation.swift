@@ -8,7 +8,7 @@
 
 import UIKit
 
-private var cheetahAssociationKey = "cheetahAssociation"
+var cheetahAssociationKey = "cheetahAssociation"
 
 public extension UIView {
     
@@ -18,7 +18,7 @@ public extension UIView {
                 return instance
             }
             let instance = Cheetah(view: self)
-            objc_setAssociatedObject(self, &cheetahAssociationKey, instance, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &cheetahAssociationKey, instance, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return instance
         }
     }

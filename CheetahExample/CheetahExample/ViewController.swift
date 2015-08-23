@@ -38,59 +38,49 @@ class ViewController: UIViewController {
         Easings.easeOutBounce,
         Easings.easeOutElastic,
     ]
-        
+    
+    var box: UIView!
+    var box2: UIView!
+    var label: UILabel!
+    var boxes: [UIView]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // Create view
-        let box = UIView(frame:CGRectMake(50,50,50,50))
+        box = UIView(frame:CGRectMake(50,50,50,50))
         box.backgroundColor = UIColor.blueColor()
         view.addSubview(box)
         
-        // Move to right
-        /*
-        box.cheetah
-            .move(100, 0).rotate(M_PI_2).scale(2)
-            .wait(2)
-            .move(-100, 0).rotate(-M_PI_2).scale(1)
-            .wait(2)
-            .forever
-            .run()
-        */
+        box2 = UIView(frame: CGRectMake(150, 50, 50, 50))
+        box2.backgroundColor = UIColor.blueColor()
         
-        // Move parallel
-        /*
-        box.cheetah
-            .move(100, 0).rotate(M_PI)
-            .wait()
-            .move(-100, 0).rotate(-M_PI)
-            .wait(1.0) // <- wait 1 sec to start next animation
-            .move(0, -20).duration(0.4)
-            .wait()
-            .move(0, 20).duration(0.4)
-            .wait(1.0)
-            .run()
-            .forever
-        */
+        view.addSubview(box2)
         
-        /*
-        box.cheetah
-            .move(100, 0).duration(1.0).delay(1.0)
-            .rotate(M_PI).duration(2.0)
-            .wait(1)
-            .move(-100, 0).duration(0.4)
-            .wait(2)
-            .run()
-            .forever
-        */
+        label = UILabel(frame: CGRectMake(200, 100, 200, 40))
+        label.text = "HELLO CHEETAH!"
+        view.addSubview(label)
+
+        boxes = [UIView]()
+        boxes.reserveCapacity(easeOuts.count)
+        
+        for i in 0...easeOuts.count-1 {
+            let ebox = UIView(frame: CGRectMake(20, 200 + 25 * CGFloat(i), 20, 20))
+            ebox.backgroundColor = UIColor.brownColor()
+            view.addSubview(ebox)
+            boxes.append(ebox)
+        }
+        
+        startAnimate()
+    }
+    
+    func startAnimate() {
+        
         box.cheetah
             .rotate(M_PI_2)
             .run()
-            .forever
         
-        let box2 = UIView(frame: CGRectMake(150, 50, 50, 50))
-        box2.backgroundColor = UIColor.blueColor()
         box2.cheetah
             .borderWidth(5)
             .borderColor(UIColor.redColor())
@@ -100,12 +90,7 @@ class ViewController: UIViewController {
             .borderColor(UIColor.blackColor())
             .cornerRadius(0)
             .run()
-            .forever
         
-        view.addSubview(box2)
-        
-        let label = UILabel(frame: CGRectMake(200, 100, 200, 40))
-        label.text = "HELLO CHEETAH!"
         label.cheetah
             .move(0, 30).duration(0.5).easeOutBack
             .textColor(UIColor.redColor())
@@ -114,13 +99,10 @@ class ViewController: UIViewController {
             .textColor(UIColor.blueColor())
             .wait(1)
             .run()
-            .forever
-        view.addSubview(label)
 
-        for i in 0...easeOuts.count-1 {
-            let ebox = UIView(frame: CGRectMake(20, 200 + 25 * CGFloat(i), 20, 20))
-            ebox.backgroundColor = UIColor.brownColor()
-            ebox.cheetah
+        for i in 0..<boxes.count {
+            let box = boxes[i]
+            box.cheetah
                 .move(200, 0)
                     .ease(easeOuts[i])
                     .duration(2)
@@ -136,9 +118,12 @@ class ViewController: UIViewController {
                     .duration(2)
                 .wait(1.0)
                 .run()
-                .forever
-            view.addSubview(ebox)
+                //.forever
         }
+    }
+    
+    @IBAction func didTapAnimate(sender: AnyObject) {
+        startAnimate()
     }
 
     override func didReceiveMemoryWarning() {
