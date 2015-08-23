@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Cheetah"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Easy animation library on iOS with Swift 2.0"
 
   s.description  = <<-DESC
