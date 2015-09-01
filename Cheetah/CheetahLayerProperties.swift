@@ -23,7 +23,7 @@ class CheetahLayerPositionProperty: CheetahCGPointProperty {
     }
     
     override func update() {
-        view.layer.position = calculateCGPoint(from: from, to: toCalc, rate: current, easing: easing)
+        view.layer.position = calculateCGPoint(from: from, to: toCalc)
     }
 
 }
@@ -45,7 +45,7 @@ class CheetahLayerRotationProperty: CheetahCGFloatProperty {
     }
     
     override func update() {
-        let curr = calculateCGFloat(from: from, to: toCalc, rate: current, easing: easing)
+        let curr = calculateCGFloat(from: from, to: toCalc)
         transform = CATransform3DMakeRotation(curr, 0, 0, 1)
     }
     
@@ -69,7 +69,7 @@ class CheetahLayerScaleProperty: CheetahCGPointProperty {
     }
     
     override func update() {
-        let curr = calculateCGPoint(from: from, to: toCalc, rate: current, easing: easing)
+        let curr = calculateCGPoint(from: from, to: toCalc)
         transform = CATransform3DMakeScale(curr.x, curr.y, 1)
     }
     
@@ -89,7 +89,7 @@ class CheetahLayerBorderWidthProperty: CheetahCGFloatProperty {
     }
     
     override func update() {
-        view.layer.borderWidth = calculateCGFloat(from: from, to: toCalc, rate: current, easing: easing)
+        view.layer.borderWidth = calculateCGFloat(from: from, to: toCalc)
     }
     
 }
@@ -108,7 +108,7 @@ class CheetahLayerCornerRadiusProperty: CheetahCGFloatProperty {
     }
     
     override func update() {
-        view.layer.cornerRadius = calculateCGFloat(from: from, to: toCalc, rate: current, easing: easing)
+        view.layer.cornerRadius = calculateCGFloat(from: from, to: toCalc)
     }
     
 }
@@ -131,10 +131,8 @@ class CheetahLayerBorderColorProperty: CheetahUIColorProperty {
     }
     
     override func update() {
-        let color = calculateUIColor(from: from, to: toCalc, rate: current, easing: easing)
+        let color = calculateUIColor(from: from, to: toCalc)
         view.layer.borderColor = color.CGColor
     }
     
 }
-
-

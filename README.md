@@ -1,17 +1,23 @@
 Cheetah
 ======
 
-*This library is experimental. API and all codes will be changed without notice*
-
 Cheetah is an animation utility on iOS with Swift. Cheetah can animate any properties
-since Cheetah uses simple CADisplayLink run loop
-to change animated properties.
+since Cheetah uses simple CADisplayLink run loop to change animated properties.
 
 Requirements
 ----
 
 - iOS 8.0~
 - Swift 2.0
+
+Features
+----
+
+- Animation with duration and delay
+- Changing with absolute/relative properties
+- Parallel/Serial executions
+- Easings
+- Springs
 
 Code Example
 ----
@@ -151,6 +157,27 @@ Supported eassing equations
 - Back
 - Bounce
 - Elastic
+
+Springs
+----
+
+Cheetah supports spring dynamics with tension and friction parameters.
+
+![Springs](https://suguru.github.io/Cheetah/images/springs.gif)
+
+Example
+
+```swift
+view.cheetah
+  .move(200, 0)
+  .spring()
+  .run()
+
+view.cheetah
+  .move(200, 0)
+  .spring(tension: 100, friction: 4)
+  .run()
+```
 
 Animate custom properties
 ----

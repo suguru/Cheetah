@@ -160,6 +160,13 @@ public class Cheetah {
     public var easeOutBounce: Cheetah { get { return ease(Easings.easeOutBounce) } }
     public var easeInOutBounce: Cheetah { get { return ease(Easings.easeInOutBounce) } }
     
+    // MARK:
+    public func spring(tension tension: Double = 50, friction: Double = 3) -> Cheetah {
+        lastProperty?.spring = Spring(tension: tension, friction: friction)
+        return self
+    }
+    
+    
     // MARK: repeating
     
     public var forever: Cheetah {

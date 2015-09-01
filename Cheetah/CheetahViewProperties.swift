@@ -23,7 +23,7 @@ class CheetahViewSizeProperty: CheetahCGSizeProperty {
     }
     
     override func update() {
-        view.bounds = CGRect(origin: CGPointZero, size: calculateCGSize(from: from, to: toCalc, rate: current, easing: easing))
+        view.bounds = CGRect(origin: CGPointZero, size: calculateCGSize(from: from, to: toCalc))
     }
     
 }
@@ -43,7 +43,7 @@ class CheetahViewFrameProperty: CheetahCGRectProperty {
     }
     
     override func update() {
-        view.frame = calculateCGRect(from: from, to: toCalc, rate: current, easing: easing)
+        view.frame = calculateCGRect(from: from, to: toCalc)
     }
     
 }
@@ -63,7 +63,7 @@ class CheetahViewAlphaProperty: CheetahCGFloatProperty {
     }
     
     override func update() {
-        view.alpha = calculateCGFloat(from: from, to: toCalc, rate: current, easing: easing)
+        view.alpha = calculateCGFloat(from: from, to: toCalc)
     }
 }
 
@@ -82,7 +82,7 @@ class CheetahViewBackgroundColorProperty: CheetahUIColorProperty {
     }
     
     override func update() {
-        view.backgroundColor = calculateUIColor(from: from, to: toCalc, rate: current, easing: easing)
+        view.backgroundColor = calculateUIColor(from: from, to: toCalc)
     }
     
 }

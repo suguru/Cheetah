@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     var box2: UIView!
     var label: UILabel!
     var boxes: [UIView]!
+    var sboxes: [UIView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,11 +66,21 @@ class ViewController: UIViewController {
         boxes = [UIView]()
         boxes.reserveCapacity(easeOuts.count)
         
-        for i in 0...easeOuts.count-1 {
+        for i in 0..<easeOuts.count {
             let ebox = UIView(frame: CGRectMake(20, 200 + 25 * CGFloat(i), 20, 20))
             ebox.backgroundColor = UIColor.brownColor()
             view.addSubview(ebox)
             boxes.append(ebox)
+        }
+        
+        sboxes = [UIView]()
+        sboxes.reserveCapacity(3)
+        
+        for i in 0..<sboxes.capacity {
+            let sbox = UIView(frame: CGRectMake(20, 200 + 25 * CGFloat(i+easeOuts.count+1), 20, 20))
+            sbox.backgroundColor = UIColor.greenColor()
+            view.addSubview(sbox)
+            sboxes.append(sbox)
         }
         
         startAnimate()
@@ -120,6 +131,36 @@ class ViewController: UIViewController {
                 .run()
                 //.forever
         }
+        
+        sboxes[0].cheetah
+                .move(200, 0)
+                    .spring()
+                    .duration(2)
+                .wait()
+                .move(-200, 0)
+                    .spring()
+                    .duration(2)
+                .run()
+        
+        sboxes[1].cheetah
+                .move(200, 0)
+                    .spring(tension: 100, friction: 2)
+                    .duration(2)
+                .wait()
+                .move(-200, 0)
+                    .spring(tension: 100, friction: 2)
+                    .duration(2)
+                .run()
+        
+        sboxes[2].cheetah
+                .move(200, 0)
+                    .spring(tension: 10, friction: 8)
+                    .duration(2)
+                .wait()
+                .move(-200, 0)
+                    .spring(tension: 10, friction: 8)
+                    .duration(2)
+                .run()
     }
     
     @IBAction func didTapAnimate(sender: AnyObject) {

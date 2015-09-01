@@ -29,7 +29,7 @@ class CheetahTextColorProperty: CheetahUIColorProperty {
         guard let text = view as? UILabel else {
             return
         }
-        text.textColor = calculateUIColor(from: from, to: toCalc, rate: current, easing: easing)
+        text.textColor = calculateUIColor(from: from, to: toCalc)
     }
     
 }
