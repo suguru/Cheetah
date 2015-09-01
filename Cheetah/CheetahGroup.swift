@@ -44,7 +44,9 @@ class CheetahGroup {
             if !prop.proceed(dt) {
                 done = false
             }
-            transform = CATransform3DConcat(transform, prop.transform)
+            if !CATransform3DIsIdentity(prop.transform) {
+                transform = CATransform3DConcat(transform, prop.transform)
+            }
         }
         view?.layer.transform = transform
         return done
