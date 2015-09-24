@@ -39,7 +39,7 @@ public class CheetahManager {
         }
         
         // add to management dictionary
-        cheetahs[counter] = cheetah
+        cheetahs[cheetah.id] = cheetah
         
         // start run loop
         if displayLink == nil {
