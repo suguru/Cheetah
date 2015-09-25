@@ -45,6 +45,9 @@ class ViewController: UIViewController {
     var boxes: [UIView]!
     var sboxes: [UIView]!
     
+    @IBOutlet weak var autolayoutBox: UIView!
+    @IBOutlet weak var autolayoutBottom: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -160,6 +163,11 @@ class ViewController: UIViewController {
                 .move(-200, 0)
                     .spring(tension: 10, friction: 8)
                     .duration(2)
+                .run()
+        
+        autolayoutBox.cheetah
+                .constraint(autolayoutBottom, constant: 100)
+                .duration(2)
                 .run()
     }
     

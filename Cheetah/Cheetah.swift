@@ -88,6 +88,10 @@ public class Cheetah {
         return addProperty(CheetahTextColorProperty(view: view, textColor: color))
     }
     
+    public func constraint(constraint: NSLayoutConstraint!, constant: CGFloat) -> Cheetah {
+        return addProperty(CheetahConstraintProperty(view: view, constraint: constraint, constant: constant))
+    }
+    
     // MARK: Animation anchor
     
     public func anchor(point: CGPoint) -> Cheetah {

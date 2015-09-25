@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -24,17 +24,32 @@
                                     <action selector="didTapAnimate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sRj-2e-hDz"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCA-Hn-Cgl">
+                                <rect key="frame" x="305" y="603" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.25098040699958801" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="T8g-ad-RZX"/>
+                                    <constraint firstAttribute="width" constant="44" id="q4z-Nb-INn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="C9v-B6-I2M" secondAttribute="bottom" constant="20" id="GjW-Gm-yiK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SCA-Hn-Cgl" secondAttribute="trailing" constant="10" id="Wt5-CB-9jw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="C9v-B6-I2M" secondAttribute="leading" id="bRA-Ea-gq3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SCA-Hn-Cgl" secondAttribute="bottom" constant="20" id="kTW-kL-8O1"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="autolayoutBottom" destination="kTW-kL-8O1" id="Rlk-ak-VmI"/>
+                        <outlet property="autolayoutBox" destination="SCA-Hn-Cgl" id="bAu-DF-45Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="391.5" y="377.5"/>
         </scene>
     </scenes>
 </document>
