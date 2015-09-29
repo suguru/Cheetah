@@ -48,7 +48,9 @@ class CheetahGroup {
                 transform = CATransform3DConcat(transform, prop.transform)
             }
         }
-        view?.layer.transform = transform
+        if !done {
+            view?.layer.transform = transform
+        }
         return done
     }
     
