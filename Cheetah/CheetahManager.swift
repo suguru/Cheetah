@@ -56,7 +56,7 @@ public class CheetahManager {
             lastLoopTime = displayLink.timestamp
         }
         
-        for (id, cheetah) in cheetahs {
+        for (_, cheetah) in cheetahs {
             if cheetah.proceed(dt) {
                 // remove cheetah from UIView
                 if let view = cheetah.view {
@@ -64,7 +64,7 @@ public class CheetahManager {
                 }
                 cheetah.remove()
                 // remove cheetah from dic
-                cheetahs[id] = nil
+                cheetahs[cheetah.id] = nil
             }
         }
         

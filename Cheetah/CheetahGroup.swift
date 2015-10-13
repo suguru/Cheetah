@@ -36,6 +36,9 @@ class CheetahGroup {
         if elapsed < delay {
             return false
         }
+        if properties.count == 0 {
+            return true
+        }
         // proceed each item properties
         var done = true
         var transform = fromTransform
@@ -48,9 +51,7 @@ class CheetahGroup {
                 transform = CATransform3DConcat(transform, prop.transform)
             }
         }
-        if !done {
-            view?.layer.transform = transform
-        }
+        view?.layer.transform = transform
         return done
     }
     

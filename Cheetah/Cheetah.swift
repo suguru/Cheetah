@@ -21,7 +21,7 @@ public class Cheetah {
     
     init(view: UIView) {
         self.view = view
-        groups = [CheetahGroup(view: view)]
+        groups = []
     }
     
     var lastProperty: CheetahProperty? {
@@ -204,7 +204,7 @@ public class Cheetah {
     // Remove all animations
     public func remove() -> Cheetah {
         // remove all items
-        groups = [CheetahGroup(view: view)]
+        groups = []
         running = false
         groupIndex = 0
         return self
@@ -224,8 +224,6 @@ public class Cheetah {
         // Prepare first group
         prepare(groups.first)
         CheetahManager.sharedInstance.add(self)
-        // Add next group to grouping current properties
-        addGroup()
         return self
     }
     
@@ -304,6 +302,9 @@ public class Cheetah {
     
     // Add property to current group
     public func addProperty(prop: CheetahProperty) -> Cheetah {
+        if groups.count == 0 {
+            addGroup()
+        }
         if let group = groups.last {
             prop.group = group
             prop.duration = group.duration
