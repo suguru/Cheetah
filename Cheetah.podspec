@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Cheetah"
-  s.version      = "0.2.3"
+  s.version      = "0.2.4"
   s.summary      = "Easy animation library on iOS with Swift 2.0"
 
   s.description  = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
 
-  s.source       = { :git => "https://github.com/suguru/Cheetah.git", :tag => "0.2.3" }
+  s.source       = { :git => "https://github.com/suguru/Cheetah.git", :tag => "0.2.4" }
 
   s.source_files  = "Classes", "Cheetah/*.swift"
 
