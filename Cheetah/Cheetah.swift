@@ -188,7 +188,7 @@ public class Cheetah {
     // MARK: Flow control
     
     // Set completion block for each properties
-    public func completion(completion: () -> Void) -> Cheetah {
+    public func completion(completion: (() -> Void)?) -> Cheetah {
         groups.last?.properties.last?.completion = completion
         return self
     }
