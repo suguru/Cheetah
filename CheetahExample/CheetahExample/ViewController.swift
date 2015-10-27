@@ -91,6 +91,16 @@ class ViewController: UIViewController {
     
     func startAnimate() {
         
+        /*
+        box.cheetah
+            .rotate(1).duration(1)
+            .scale(2).duration(2)
+            .move(100, 100).duration(2)
+            .wait()
+            .move(-100, -100).duration(1)
+            .run()
+        */
+        
         box.cheetah
             .rotate(M_PI_2)
             .run()
@@ -120,17 +130,19 @@ class ViewController: UIViewController {
                 .move(200, 0)
                     .ease(easeOuts[i])
                     .duration(2)
-                .rotate(M_PI*2)
+                .rotate(5)
+                //.rotate(M_PI*2)
                     .ease(easeOuts[i])
                     .duration(2)
                 .wait()
-                .move(-200, 0)
+                .move(-190, 0)
                     .ease(easeIns[i])
                     .duration(2)
-                .rotate(-M_PI*2)
+                .rotate(5)
+                //.rotate(-M_PI*2)
                     .ease(easeIns[i])
                     .duration(2)
-                .wait(1.0)
+                .wait()
                 .run()
                 //.forever
         }
