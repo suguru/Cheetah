@@ -10,7 +10,7 @@ import UIKit
 
 class CheetahLayerPositionProperty: CheetahCGPointProperty {
     
-    init(view: UIView!, position: CGPoint, relative: Bool = false) {
+    init(view: UIView?, position: CGPoint, relative: Bool = false) {
         super.init()
         self.view = view
         self.relative = relative
@@ -19,10 +19,16 @@ class CheetahLayerPositionProperty: CheetahCGPointProperty {
     
     override func prepare() {
         super.prepare()
+        guard let view = view else {
+            return
+        }
         from = view.layer.position
     }
     
     override func update() {
+        guard let view = view else {
+            return
+        }
         view.layer.position = calculateCGPoint(from: from, to: toCalc)
     }
 
@@ -32,7 +38,7 @@ class CheetahLayerRotationProperty: CheetahCGFloatProperty {
     
     var last: CGFloat = 0
     
-    init(view: UIView!, rotation: CGFloat, relative: Bool = false) {
+    init(view: UIView?, rotation: CGFloat, relative: Bool = false) {
         super.init()
         self.view = view
         self.relative = relative
@@ -41,6 +47,9 @@ class CheetahLayerRotationProperty: CheetahCGFloatProperty {
     
     override func prepare() {
         super.prepare()
+        guard let view = view else {
+            return
+        }
         from = atan2(view.layer.transform.m12, view.layer.transform.m11)
     }
     
@@ -55,7 +64,7 @@ class CheetahLayerScaleProperty: CheetahCGPointProperty {
     
     var last: CGPoint = CGPointZero
     
-    init(view: UIView!, scale: CGPoint) {
+    init(view: UIView?, scale: CGPoint) {
         super.init()
         self.view = view
         to = scale
@@ -63,6 +72,9 @@ class CheetahLayerScaleProperty: CheetahCGPointProperty {
     
     override func prepare() {
         super.prepare()
+        guard let view = view else {
+            return
+        }
         let t = view.layer.transform
         from.x = sqrt((t.m11 * t.m11) + (t.m12 * t.m12) + (t.m13 * t.m13))
         from.y = sqrt((t.m21 * t.m21) + (t.m22 * t.m22) + (t.m23 * t.m23))
@@ -77,7 +89,7 @@ class CheetahLayerScaleProperty: CheetahCGPointProperty {
 
 class CheetahLayerBorderWidthProperty: CheetahCGFloatProperty {
     
-    init(view: UIView!, borderWidth: CGFloat) {
+    init(view: UIView?, borderWidth: CGFloat) {
         super.init()
         self.view = view
         to = borderWidth
@@ -85,10 +97,16 @@ class CheetahLayerBorderWidthProperty: CheetahCGFloatProperty {
     
     override func prepare() {
         super.prepare()
+        guard let view = view else {
+            return
+        }
         from = view.layer.borderWidth
     }
     
     override func update() {
+        guard let view = view else {
+            return
+        }
         view.layer.borderWidth = calculateCGFloat(from: from, to: toCalc)
     }
     
@@ -96,7 +114,7 @@ class CheetahLayerBorderWidthProperty: CheetahCGFloatProperty {
 
 class CheetahLayerCornerRadiusProperty: CheetahCGFloatProperty {
     
-    init(view: UIView!, cornerRadius: CGFloat) {
+    init(view: UIView?, cornerRadius: CGFloat) {
         super.init()
         self.view = view
         to = cornerRadius
@@ -104,10 +122,16 @@ class CheetahLayerCornerRadiusProperty: CheetahCGFloatProperty {
     
     override func prepare() {
         super.prepare()
+        guard let view = view else {
+            return
+        }
         from = view.layer.cornerRadius
     }
     
     override func update() {
+        guard let view = view else {
+            return
+        }
         view.layer.cornerRadius = calculateCGFloat(from: from, to: toCalc)
     }
     
@@ -115,7 +139,7 @@ class CheetahLayerCornerRadiusProperty: CheetahCGFloatProperty {
 
 class CheetahLayerBorderColorProperty: CheetahUIColorProperty {
     
-    init(view: UIView!, borderColor: UIColor) {
+    init(view: UIView?, borderColor: UIColor) {
         super.init()
         self.view = view
         self.to = borderColor
@@ -123,6 +147,9 @@ class CheetahLayerBorderColorProperty: CheetahUIColorProperty {
     
     override func prepare() {
         super.prepare()
+        guard let view = view else {
+            return
+        }
         if let borderColor = view.layer.borderColor {
             from = UIColor(CGColor: borderColor)
         } else {
@@ -132,6 +159,9 @@ class CheetahLayerBorderColorProperty: CheetahUIColorProperty {
     
     override func update() {
         let color = calculateUIColor(from: from, to: toCalc)
+        guard let view = view else {
+            return
+        }
         view.layer.borderColor = color.CGColor
     }
     

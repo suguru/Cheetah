@@ -11,9 +11,9 @@ import UIKit
 class CheetahConstraintProperty: CheetahCGFloatProperty {
     
     var last: CGFloat = 0
-    weak var constraint: NSLayoutConstraint!
+    weak var constraint: NSLayoutConstraint?
     
-    init(view: UIView!, constraint: NSLayoutConstraint!, constant: CGFloat, relative: Bool = false) {
+    init(view: UIView?, constraint: NSLayoutConstraint?, constant: CGFloat, relative: Bool = false) {
         super.init()
         self.view = view
         self.constraint = constraint
@@ -23,11 +23,17 @@ class CheetahConstraintProperty: CheetahCGFloatProperty {
     
     override func prepare() {
         super.prepare()
+        guard let constraint = constraint else {
+            return
+        }
         from = constraint.constant
     }
     
     override func update() {
         let curr = calculateCGFloat(from: from, to: toCalc)
+        guard let constraint = constraint else {
+            return
+        }
         constraint.constant = curr
     }
     

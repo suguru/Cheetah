@@ -11,8 +11,8 @@ import UIKit
 // CheetahProperty
 public class CheetahProperty {
     
-    weak var view: UIView!
-    weak var group: CheetahGroup!
+    weak var view: UIView?
+    weak var group: CheetahGroup?
     
     var duration: CFTimeInterval = 1
     var delay: CFTimeInterval = 0
