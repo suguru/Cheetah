@@ -19,6 +19,17 @@ Features
 - Easings
 - Springs
 
+Carthage
+----
+
+Carthage is a simple, decentralized dependency manager for Cocoa.
+
+To install Cheetah, simply add the following line to your Cartfile:
+
+```
+github "suguru/Cheetah"
+```
+
 Code Example
 ----
 

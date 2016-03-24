@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F6734021B947CB70067B8DA /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6734011B947CB70067B8DA /* Spring.swift */; settings = {ASSET_TAGS = (); }; };
+		6F6734021B947CB70067B8DA /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6734011B947CB70067B8DA /* Spring.swift */; };
 		6F8992141B86066400A92F18 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992131B86066400A92F18 /* Bezier.swift */; };
 		6F89921A1B87762200A92F18 /* CheetahLabelProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992191B87762200A92F18 /* CheetahLabelProperties.swift */; };
 		6F89921C1B8832F800A92F18 /* CheetahManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89921B1B8832F800A92F18 /* CheetahManager.swift */; };
@@ -21,7 +21,7 @@
 		6F96CFBF1B848CA90014443A /* CheetahViewProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFBE1B848CA90014443A /* CheetahViewProperties.swift */; };
 		6F96CFC11B85674A0014443A /* CheetahLayerProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFC01B85674A0014443A /* CheetahLayerProperties.swift */; };
 		6F96CFC31B85B8690014443A /* CheetahGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFC21B85B8690014443A /* CheetahGroup.swift */; };
-		6FD01F891BB3FE4900FF26E5 /* CheetahConstraintProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD01F881BB3FE4900FF26E5 /* CheetahConstraintProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		6FD01F891BB3FE4900FF26E5 /* CheetahConstraintProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD01F881BB3FE4900FF26E5 /* CheetahConstraintProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -363,6 +363,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Cheetah/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.suguru.Cheetah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +382,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Cheetah/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.suguru.Cheetah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
