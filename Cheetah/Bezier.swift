@@ -38,10 +38,10 @@ struct UnitBezier {
     }
     func solveCurveX(x: CGFloat) -> CGFloat {
         var t0, t1, t2, x2, d2: CGFloat
-        var i: Int
         
         // Firstly try a few iterations of Newton's method -- normally very fast
-        for t2 = x, i = 0; i < 8; i++ {
+        t2 = x
+        for _ in 0..<8 {
             x2 = sampleCurveX(t2) - x
             if fabs(x2) < epsilon {
                 return t2

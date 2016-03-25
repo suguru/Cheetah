@@ -32,7 +32,8 @@ public class CheetahManager {
         
         // assign ID if does not exist
         if cheetah.id == 0 {
-            if ++counter == 0 {
+            counter += 1
+            if counter == 0 {
                 counter = 1
             }
             cheetah.id = counter
@@ -43,7 +44,7 @@ public class CheetahManager {
         
         // start run loop
         if displayLink == nil {
-            displayLink = CADisplayLink(target: self, selector: "update:")
+            displayLink = CADisplayLink(target: self, selector: #selector(CheetahManager.update(_:)))
             lastLoopTime = CACurrentMediaTime()
             displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
         }

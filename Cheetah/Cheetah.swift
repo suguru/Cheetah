@@ -287,12 +287,13 @@ public class Cheetah {
         // duration between each run loop
         let group = groups[groupIndex]
         if group.proceed(dt) {
-            if ++groupIndex >= groups.count {
+            groupIndex += 1
+            if groupIndex >= groups.count {
                 if repeatCount == 0 {
                     return true
                 }
                 groupIndex = 0
-                repeatCount--
+                repeatCount -= 1
             }
             // prepare next group
             prepare(groups[groupIndex])
