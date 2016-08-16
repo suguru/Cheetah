@@ -36,7 +36,7 @@ Code Example
 ```swift
 // Create view
 let box = UIView(frame:CGRectMake(100,100,50,50))
-view.backgroundColor = UIColor.blueColor()
+box.backgroundColor = UIColor.blueColor()
 view.addSubview(box)
 
 // Move to 100px right
