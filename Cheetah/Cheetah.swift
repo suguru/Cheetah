@@ -99,15 +99,15 @@ open class Cheetah {
         return self
     }
     
-    open var anchorTop: Cheetah { anchor(CGPoint(x: 0.5, y: 1)); return self }
-    open var anchorBottom: Cheetah { anchor(CGPoint(x: 0.5, y: 1)); return self }
-    open var anchorLeft: Cheetah { anchor(CGPoint(x: 0, y: 0.5)); return self }
-    open var anchorRight: Cheetah { anchor(CGPoint(x: 1, y: 0.5)); return self }
-    open var anchorBottomLeft: Cheetah { anchor(CGPoint(x: 0, y: 1)); return self }
-    open var anchorBottomRight: Cheetah { anchor(CGPoint(x: 1, y: 1)); return self }
-    open var anchorTopLeft: Cheetah { anchor(CGPoint(x: 0, y: 0)); return self }
-    open var anchorTopRight: Cheetah { anchor(CGPoint(x: 1, y: 0)); return self }
-    open var anchorCenter: Cheetah { anchor(CGPoint(x: 0.5, y: 0.5)); return self }
+    open var anchorTop: Cheetah { return anchor(CGPoint(x: 0.5, y: 1)) }
+    open var anchorBottom: Cheetah { return anchor(CGPoint(x: 0.5, y: 1)) }
+    open var anchorLeft: Cheetah { return anchor(CGPoint(x: 0, y: 0.5)) }
+    open var anchorRight: Cheetah { return anchor(CGPoint(x: 1, y: 0.5)) }
+    open var anchorBottomLeft: Cheetah { return anchor(CGPoint(x: 0, y: 1)) }
+    open var anchorBottomRight: Cheetah { return anchor(CGPoint(x: 1, y: 1)) }
+    open var anchorTopLeft: Cheetah { return anchor(CGPoint(x: 0, y: 0)) }
+    open var anchorTopRight: Cheetah { return anchor(CGPoint(x: 1, y: 0)) }
+    open var anchorCenter: Cheetah { return anchor(CGPoint(x: 0.5, y: 0.5)) }
     
     // MARK: Time & Timings
     
@@ -180,7 +180,7 @@ open class Cheetah {
         }
     }
     
-    open func repeatCount(_ count: Int) -> Cheetah {
+    @discardableResult open func repeatCount(_ count: Int) -> Cheetah {
         repeatCount = count
         return self
     }
@@ -188,7 +188,7 @@ open class Cheetah {
     // MARK: Flow control
     
     // Set completion block for each properties
-    open func completion(_ completion: (() -> Void)?) -> Cheetah {
+    @discardableResult open func completion(_ completion: (() -> Void)?) -> Cheetah {
         groups.last?.properties.last?.completion = completion
         return self
     }
@@ -202,7 +202,7 @@ open class Cheetah {
     }
     
     // Remove all animations
-    open func remove() -> Cheetah {
+    @discardableResult open func remove() -> Cheetah {
         // remove all items
         groups = []
         running = false
@@ -213,7 +213,7 @@ open class Cheetah {
     // MARK: Playing controls
     
     // Start configured animation
-    open func run() -> Cheetah {
+    @discardableResult open func run() -> Cheetah {
         if running {
             return self
         }
@@ -302,7 +302,7 @@ open class Cheetah {
     }
     
     // Add property to current group
-    open func addProperty(_ prop: CheetahProperty) -> Cheetah {
+    @discardableResult open func addProperty(_ prop: CheetahProperty) -> Cheetah {
         if groups.count == 0 {
             addGroup()
         }
@@ -315,7 +315,7 @@ open class Cheetah {
     }
     
     // Add new group to groups
-    func addGroup() -> CheetahGroup {
+    @discardableResult func addGroup() -> CheetahGroup {
         let group = CheetahGroup(view: view)
         if let last = groups.last {
             group.anchorPoint = last.anchorPoint
