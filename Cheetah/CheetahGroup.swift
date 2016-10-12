@@ -31,7 +31,7 @@ class CheetahGroup {
         }
     }
     
-    func proceed(dt: CFTimeInterval) -> Bool {
+    func proceed(_ dt: CFTimeInterval) -> Bool {
         elapsed += dt
         if elapsed < delay {
             return false

@@ -62,7 +62,7 @@ class CheetahLayerRotationProperty: CheetahCGFloatProperty {
 
 class CheetahLayerScaleProperty: CheetahCGPointProperty {
     
-    var last: CGPoint = CGPointZero
+    var last: CGPoint = CGPoint.zero
     
     init(view: UIView?, scale: CGPoint) {
         super.init()
@@ -151,9 +151,9 @@ class CheetahLayerBorderColorProperty: CheetahUIColorProperty {
             return
         }
         if let borderColor = view.layer.borderColor {
-            from = UIColor(CGColor: borderColor)
+            from = UIColor(cgColor: borderColor)
         } else {
-            from = UIColor.blackColor()
+            from = UIColor.black
         }
     }
     
@@ -162,7 +162,7 @@ class CheetahLayerBorderColorProperty: CheetahUIColorProperty {
         guard let view = view else {
             return
         }
-        view.layer.borderColor = color.CGColor
+        view.layer.borderColor = color.cgColor
     }
     
 }

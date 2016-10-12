@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Cheetah {
+open class Cheetah {
     
     weak var view: UIView?
     
@@ -32,87 +32,87 @@ public class Cheetah {
     
     // MARK: Animations
     
-    public func size(width: CGFloat, _ height: CGFloat, relative: Bool = false) -> Cheetah {
+    open func size(_ width: CGFloat, _ height: CGFloat, relative: Bool = false) -> Cheetah {
         return addProperty(CheetahViewSizeProperty(view: view, size: CGSize(width: width, height: height), relative: relative))
     }
     
-    public func frame(frame: CGRect) -> Cheetah {
+    open func frame(_ frame: CGRect) -> Cheetah {
         return addProperty(CheetahViewFrameProperty(view: view, frame: frame))
     }
     
-    public func position(x: CGFloat, _ y: CGFloat) -> Cheetah {
+    open func position(_ x: CGFloat, _ y: CGFloat) -> Cheetah {
         return addProperty(CheetahLayerPositionProperty(view: view, position: CGPoint(x: x, y: y)))
     }
     
-    public func move(x: CGFloat, _ y: CGFloat) -> Cheetah {
+    open func move(_ x: CGFloat, _ y: CGFloat) -> Cheetah {
         return addProperty(CheetahLayerPositionProperty(view: view, position: CGPoint(x: x, y: y), relative: true))
     }
     
-    public func rotation(angle: Double) -> Cheetah {
+    open func rotation(_ angle: Double) -> Cheetah {
         return addProperty(CheetahLayerRotationProperty(view: view, rotation: CGFloat(angle)))
     }
     
-    public func rotate(angle: Double) -> Cheetah {
+    open func rotate(_ angle: Double) -> Cheetah {
         return addProperty(CheetahLayerRotationProperty(view: view, rotation: CGFloat(angle), relative: true))
     }
     
-    public func scale(scale: CGFloat) -> Cheetah {
+    open func scale(_ scale: CGFloat) -> Cheetah {
         return addProperty(CheetahLayerScaleProperty(view: view, scale: CGPoint(x: scale, y: scale)))
     }
     
-    public func scaleXY(x: CGFloat, _ y: CGFloat) -> Cheetah {
+    open func scaleXY(_ x: CGFloat, _ y: CGFloat) -> Cheetah {
         return addProperty(CheetahLayerScaleProperty(view: view, scale: CGPoint(x: x, y: y)))
     }
     
-    public func alpha(alpha: CGFloat) -> Cheetah {
+    open func alpha(_ alpha: CGFloat) -> Cheetah {
         return addProperty(CheetahViewAlphaProperty(view: view, alpha: alpha))
     }
     
-    public func backgroundColor(color: UIColor) -> Cheetah {
+    open func backgroundColor(_ color: UIColor) -> Cheetah {
         return addProperty(CheetahViewBackgroundColorProperty(view: view, color: color))
     }
     
-    public func borderWidth(borderWidth: CGFloat) -> Cheetah {
+    open func borderWidth(_ borderWidth: CGFloat) -> Cheetah {
         return addProperty(CheetahLayerBorderWidthProperty(view: view, borderWidth: borderWidth))
     }
     
-    public func borderColor(borderColor: UIColor) -> Cheetah {
+    open func borderColor(_ borderColor: UIColor) -> Cheetah {
         return addProperty(CheetahLayerBorderColorProperty(view: view, borderColor: borderColor))
     }
     
-    public func cornerRadius(cornerRadius: CGFloat) -> Cheetah {
+    open func cornerRadius(_ cornerRadius: CGFloat) -> Cheetah {
         return addProperty(CheetahLayerCornerRadiusProperty(view: view, cornerRadius: cornerRadius))
     }
     
-    public func textColor(color: UIColor) -> Cheetah {
+    open func textColor(_ color: UIColor) -> Cheetah {
         return addProperty(CheetahTextColorProperty(view: view, textColor: color))
     }
     
-    public func constraint(constraint: NSLayoutConstraint!, constant: CGFloat) -> Cheetah {
+    open func constraint(_ constraint: NSLayoutConstraint!, constant: CGFloat) -> Cheetah {
         return addProperty(CheetahConstraintProperty(view: view, constraint: constraint, constant: constant))
     }
     
     // MARK: Animation anchor
     
-    public func anchor(point: CGPoint) -> Cheetah {
+    open func anchor(_ point: CGPoint) -> Cheetah {
         groups.last?.anchorPoint = point
         return self
     }
     
-    public var anchorTop: Cheetah { anchor(CGPointMake(0.5, 1)); return self }
-    public var anchorBottom: Cheetah { anchor(CGPointMake(0.5, 1)); return self }
-    public var anchorLeft: Cheetah { anchor(CGPointMake(0, 0.5)); return self }
-    public var anchorRight: Cheetah { anchor(CGPointMake(1, 0.5)); return self }
-    public var anchorBottomLeft: Cheetah { anchor(CGPointMake(0, 1)); return self }
-    public var anchorBottomRight: Cheetah { anchor(CGPointMake(1, 1)); return self }
-    public var anchorTopLeft: Cheetah { anchor(CGPointMake(0, 0)); return self }
-    public var anchorTopRight: Cheetah { anchor(CGPointMake(1, 0)); return self }
-    public var anchorCenter: Cheetah { anchor(CGPointMake(0.5, 0.5)); return self }
+    open var anchorTop: Cheetah { anchor(CGPoint(x: 0.5, y: 1)); return self }
+    open var anchorBottom: Cheetah { anchor(CGPoint(x: 0.5, y: 1)); return self }
+    open var anchorLeft: Cheetah { anchor(CGPoint(x: 0, y: 0.5)); return self }
+    open var anchorRight: Cheetah { anchor(CGPoint(x: 1, y: 0.5)); return self }
+    open var anchorBottomLeft: Cheetah { anchor(CGPoint(x: 0, y: 1)); return self }
+    open var anchorBottomRight: Cheetah { anchor(CGPoint(x: 1, y: 1)); return self }
+    open var anchorTopLeft: Cheetah { anchor(CGPoint(x: 0, y: 0)); return self }
+    open var anchorTopRight: Cheetah { anchor(CGPoint(x: 1, y: 0)); return self }
+    open var anchorCenter: Cheetah { anchor(CGPoint(x: 0.5, y: 0.5)); return self }
     
     // MARK: Time & Timings
     
     // Set animation duration for last set item
-    public func duration(seconds: CFTimeInterval) -> Cheetah {
+    open func duration(_ seconds: CFTimeInterval) -> Cheetah {
         if let lastProperty = lastProperty {
             lastProperty.duration = seconds
         }
@@ -121,51 +121,51 @@ public class Cheetah {
     }
     
     // Set delay for last set item
-    public func delay(seconds: CFTimeInterval) -> Cheetah {
+    open func delay(_ seconds: CFTimeInterval) -> Cheetah {
         lastProperty?.delay = seconds
         return self
     }
     
     // MARK: Easgings
     
-    public func ease(easing: Easing) -> Cheetah {
+    open func ease(_ easing: @escaping Easing) -> Cheetah {
         groups.last?.properties.last?.easing = easing
         return self
     }
     
-    public var easeInSine: Cheetah { get { return ease(Easings.easeInSine) } }
-    public var easeOutSine: Cheetah { get { return ease(Easings.easeOutSine) } }
-    public var easeInOutSine: Cheetah { get { return ease(Easings.easeInOutSine) } }
-    public var easeInQuad: Cheetah { get { return ease(Easings.easeInQuad) } }
-    public var easeOutQuad: Cheetah { get { return ease(Easings.easeOutQuad) } }
-    public var easeInOutQuad: Cheetah { get { return ease(Easings.easeInOutQuad) } }
-    public var easeInCubic: Cheetah { get { return ease(Easings.easeInCubic) } }
-    public var easeOutCubic: Cheetah { get { return ease(Easings.easeOutCubic) } }
-    public var easeInOutCubic: Cheetah { get { return ease(Easings.easeInOutCubic) } }
-    public var easeInQuart: Cheetah { get { return ease(Easings.easeInQuart) } }
-    public var easeOutQuart: Cheetah { get { return ease(Easings.easeOutQuart) } }
-    public var easeInOutQuart: Cheetah { get { return ease(Easings.easeInOutQuart) } }
-    public var easeInQuint: Cheetah { get { return ease(Easings.easeInQuint) } }
-    public var easeOutQuint: Cheetah { get { return ease(Easings.easeOutQuint) } }
-    public var easeInOutQuint: Cheetah { get { return ease(Easings.easeInOutQuint) } }
-    public var easeInExpo: Cheetah { get { return ease(Easings.easeInExpo) } }
-    public var easeOutExpo: Cheetah { get { return ease(Easings.easeOutExpo) } }
-    public var easeInOutExpo: Cheetah { get { return ease(Easings.easeInOutExpo) } }
-    public var easeInCirc: Cheetah { get { return ease(Easings.easeInCirc) } }
-    public var easeOutCirc: Cheetah { get { return ease(Easings.easeOutCirc) } }
-    public var easeInOutCirc: Cheetah { get { return ease(Easings.easeInOutCirc) } }
-    public var easeInBack: Cheetah { get { return ease(Easings.easeInBack) } }
-    public var easeOutBack: Cheetah { get { return ease(Easings.easeOutBack) } }
-    public var easeInOutBack: Cheetah { get { return ease(Easings.easeInOutBack) } }
-    public var easeInElastic: Cheetah { get { return ease(Easings.easeInElastic) } }
-    public var easeOutElastic: Cheetah { get { return ease(Easings.easeOutElastic) } }
-    public var easeInOutElastic: Cheetah { get { return ease(Easings.easeInOutElastic) } }
-    public var easeInBounce: Cheetah { get { return ease(Easings.easeInBounce) } }
-    public var easeOutBounce: Cheetah { get { return ease(Easings.easeOutBounce) } }
-    public var easeInOutBounce: Cheetah { get { return ease(Easings.easeInOutBounce) } }
+    open var easeInSine: Cheetah { get { return ease(Easings.easeInSine) } }
+    open var easeOutSine: Cheetah { get { return ease(Easings.easeOutSine) } }
+    open var easeInOutSine: Cheetah { get { return ease(Easings.easeInOutSine) } }
+    open var easeInQuad: Cheetah { get { return ease(Easings.easeInQuad) } }
+    open var easeOutQuad: Cheetah { get { return ease(Easings.easeOutQuad) } }
+    open var easeInOutQuad: Cheetah { get { return ease(Easings.easeInOutQuad) } }
+    open var easeInCubic: Cheetah { get { return ease(Easings.easeInCubic) } }
+    open var easeOutCubic: Cheetah { get { return ease(Easings.easeOutCubic) } }
+    open var easeInOutCubic: Cheetah { get { return ease(Easings.easeInOutCubic) } }
+    open var easeInQuart: Cheetah { get { return ease(Easings.easeInQuart) } }
+    open var easeOutQuart: Cheetah { get { return ease(Easings.easeOutQuart) } }
+    open var easeInOutQuart: Cheetah { get { return ease(Easings.easeInOutQuart) } }
+    open var easeInQuint: Cheetah { get { return ease(Easings.easeInQuint) } }
+    open var easeOutQuint: Cheetah { get { return ease(Easings.easeOutQuint) } }
+    open var easeInOutQuint: Cheetah { get { return ease(Easings.easeInOutQuint) } }
+    open var easeInExpo: Cheetah { get { return ease(Easings.easeInExpo) } }
+    open var easeOutExpo: Cheetah { get { return ease(Easings.easeOutExpo) } }
+    open var easeInOutExpo: Cheetah { get { return ease(Easings.easeInOutExpo) } }
+    open var easeInCirc: Cheetah { get { return ease(Easings.easeInCirc) } }
+    open var easeOutCirc: Cheetah { get { return ease(Easings.easeOutCirc) } }
+    open var easeInOutCirc: Cheetah { get { return ease(Easings.easeInOutCirc) } }
+    open var easeInBack: Cheetah { get { return ease(Easings.easeInBack) } }
+    open var easeOutBack: Cheetah { get { return ease(Easings.easeOutBack) } }
+    open var easeInOutBack: Cheetah { get { return ease(Easings.easeInOutBack) } }
+    open var easeInElastic: Cheetah { get { return ease(Easings.easeInElastic) } }
+    open var easeOutElastic: Cheetah { get { return ease(Easings.easeOutElastic) } }
+    open var easeInOutElastic: Cheetah { get { return ease(Easings.easeInOutElastic) } }
+    open var easeInBounce: Cheetah { get { return ease(Easings.easeInBounce) } }
+    open var easeOutBounce: Cheetah { get { return ease(Easings.easeOutBounce) } }
+    open var easeInOutBounce: Cheetah { get { return ease(Easings.easeInOutBounce) } }
     
     // MARK:
-    public func spring(tension tension: Double = 50, friction: Double = 3) -> Cheetah {
+    open func spring(tension: Double = 50, friction: Double = 3) -> Cheetah {
         lastProperty?.spring = Spring(tension: tension, friction: friction)
         return self
     }
@@ -173,14 +173,14 @@ public class Cheetah {
     
     // MARK: repeating
     
-    public var forever: Cheetah {
+    open var forever: Cheetah {
         get {
             repeatCount = -1
             return self
         }
     }
     
-    public func repeatCount(count: Int) -> Cheetah {
+    open func repeatCount(_ count: Int) -> Cheetah {
         repeatCount = count
         return self
     }
@@ -188,13 +188,13 @@ public class Cheetah {
     // MARK: Flow control
     
     // Set completion block for each properties
-    public func completion(completion: (() -> Void)?) -> Cheetah {
+    open func completion(_ completion: (() -> Void)?) -> Cheetah {
         groups.last?.properties.last?.completion = completion
         return self
     }
     
     // Wait all properties completed
-    public func wait(seconds: CFTimeInterval = 0) -> Cheetah {
+    open func wait(_ seconds: CFTimeInterval = 0) -> Cheetah {
         // Stack new group to list
         addGroup()
         groups.last?.delay = seconds
@@ -202,7 +202,7 @@ public class Cheetah {
     }
     
     // Remove all animations
-    public func remove() -> Cheetah {
+    open func remove() -> Cheetah {
         // remove all items
         groups = []
         running = false
@@ -213,7 +213,7 @@ public class Cheetah {
     // MARK: Playing controls
     
     // Start configured animation
-    public func run() -> Cheetah {
+    open func run() -> Cheetah {
         if running {
             return self
         }
@@ -228,12 +228,12 @@ public class Cheetah {
     }
     
     // Pause action
-    public func pause() {
+    open func pause() {
         paused = true
     }
     
     // Resume action
-    public func resume() {
+    open func resume() {
         paused = false
     }
     
@@ -243,8 +243,8 @@ public class Cheetah {
     // MARK: Private methods
     //
     
-    private func prepare(group: CheetahGroup?) {
-        guard let group = group, view = view else {
+    fileprivate func prepare(_ group: CheetahGroup?) {
+        guard let group = group, let view = view else {
             return
         }
         // Set anchor point and adjust position
@@ -253,16 +253,16 @@ public class Cheetah {
             // Keep position while changing anchor point
             // http://stackoverflow.com/questions/1968017/changing-my-calayers-anchorpoint-moves-the-view
             
-            var newPoint = CGPointMake(view.bounds.size.width * group.anchorPoint.x, view.bounds.size.height * group.anchorPoint.y)
-            var oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x, view.bounds.size.height * view.layer.anchorPoint.y)
+            var newPoint = CGPoint(x: view.bounds.size.width * group.anchorPoint.x, y: view.bounds.size.height * group.anchorPoint.y)
+            var oldPoint = CGPoint(x: view.bounds.size.width * view.layer.anchorPoint.x, y: view.bounds.size.height * view.layer.anchorPoint.y)
             
-            newPoint = CGPointApplyAffineTransform(newPoint, view.transform)
-            oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform)
+            newPoint = newPoint.applying(view.transform)
+            oldPoint = oldPoint.applying(view.transform)
             
             view.layer.anchorPoint = group.anchorPoint
-            view.layer.position = CGPointMake(
-                view.layer.position.x - oldPoint.x + newPoint.x,
-                view.layer.position.y - oldPoint.y + newPoint.y
+            view.layer.position = CGPoint(
+                x: view.layer.position.x - oldPoint.x + newPoint.x,
+                y: view.layer.position.y - oldPoint.y + newPoint.y
             )
         }
         // Save transform
@@ -271,7 +271,7 @@ public class Cheetah {
     
     // proceed animation
     // returns true when completed
-    func proceed(dt: CFTimeInterval) -> Bool {
+    func proceed(_ dt: CFTimeInterval) -> Bool {
         if view == nil {
             // end animation if view is destructed
             return true
@@ -302,7 +302,7 @@ public class Cheetah {
     }
     
     // Add property to current group
-    public func addProperty(prop: CheetahProperty) -> Cheetah {
+    open func addProperty(_ prop: CheetahProperty) -> Cheetah {
         if groups.count == 0 {
             addGroup()
         }

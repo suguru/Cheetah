@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias Easing = (t:CGFloat, b:CGFloat, c:CGFloat) -> CGFloat
+public typealias Easing = (_ t:CGFloat, _ b:CGFloat, _ c:CGFloat) -> CGFloat
 
 private let F_PI = CGFloat(M_PI)
 
@@ -20,7 +20,7 @@ public struct Easings {
     }
     
     // return easing with cubic bezier curve
-    public static func cubicBezier(c1x:CGFloat, _ c1y:CGFloat, _ c2x:CGFloat, _ c2y:CGFloat) -> Easing {
+    public static func cubicBezier(_ c1x:CGFloat, _ c1y:CGFloat, _ c2x:CGFloat, _ c2y:CGFloat) -> Easing {
         let bezier = UnitBezier(p1x: c1x, p1y: c1y, p2x: c2x, p2y: c2y)
         return { (t: CGFloat, b:CGFloat, c:CGFloat) -> CGFloat in
             let y = bezier.solve(t)
@@ -101,7 +101,7 @@ public struct Easings {
         }
     }
     public static let easeInBounce:Easing = { (t:CGFloat, b:CGFloat, c:CGFloat) -> CGFloat in
-        return c - Easings.easeOutBounce(t: 1-t, b: 0, c: c) + b
+        return c - Easings.easeOutBounce(1-t, 0, c) + b
     }
     public static let easeOutBounce:Easing = { (t:CGFloat, b:CGFloat, c:CGFloat) -> CGFloat in
         if t < 1/2.75 {
@@ -119,9 +119,9 @@ public struct Easings {
     }
     public static let easeInOutBounce:Easing = { (t:CGFloat, b:CGFloat, c:CGFloat) -> CGFloat in
         if t < 0.5 {
-            return Easings.easeInBounce(t: t * 2, b: 0, c: c) * 0.5 + b;
+            return Easings.easeInBounce(t * 2, 0, c) * 0.5 + b;
         } else {
-            return Easings.easeOutBounce(t: t * 2 - 1, b: 0, c: c) * 0.5 + c * 0.5 + b
+            return Easings.easeOutBounce(t * 2 - 1, 0, c) * 0.5 + c * 0.5 + b
         }
     }
 }

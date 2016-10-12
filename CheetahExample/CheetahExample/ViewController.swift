@@ -53,16 +53,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Create view
-        box = UIView(frame:CGRectMake(50,50,50,50))
-        box.backgroundColor = UIColor.blueColor()
+        box = UIView(frame:CGRect(x: 50,y: 50,width: 50,height: 50))
+        box.backgroundColor = UIColor.blue
         view.addSubview(box)
         
-        box2 = UIView(frame: CGRectMake(150, 50, 50, 50))
-        box2.backgroundColor = UIColor.blueColor()
+        box2 = UIView(frame: CGRect(x: 150, y: 50, width: 50, height: 50))
+        box2.backgroundColor = UIColor.blue
         
         view.addSubview(box2)
         
-        label = UILabel(frame: CGRectMake(200, 100, 200, 40))
+        label = UILabel(frame: CGRect(x: 200, y: 100, width: 200, height: 40))
         label.text = "HELLO CHEETAH!"
         view.addSubview(label)
 
@@ -70,8 +70,8 @@ class ViewController: UIViewController {
         boxes.reserveCapacity(easeOuts.count)
         
         for i in 0..<easeOuts.count {
-            let ebox = UIView(frame: CGRectMake(20, 200 + 25 * CGFloat(i), 20, 20))
-            ebox.backgroundColor = UIColor.brownColor()
+            let ebox = UIView(frame: CGRect(x: 20, y: 200 + 25 * CGFloat(i), width: 20, height: 20))
+            ebox.backgroundColor = UIColor.brown
             view.addSubview(ebox)
             boxes.append(ebox)
         }
@@ -80,8 +80,8 @@ class ViewController: UIViewController {
         sboxes.reserveCapacity(3)
         
         for i in 0..<sboxes.capacity {
-            let sbox = UIView(frame: CGRectMake(20, 200 + 25 * CGFloat(i+easeOuts.count+1), 20, 20))
-            sbox.backgroundColor = UIColor.greenColor()
+            let sbox = UIView(frame: CGRect(x: 20, y: 200 + 25 * CGFloat(i+easeOuts.count+1), width: 20, height: 20))
+            sbox.backgroundColor = UIColor.green
             view.addSubview(sbox)
             sboxes.append(sbox)
         }
@@ -107,20 +107,20 @@ class ViewController: UIViewController {
         
         box2.cheetah
             .borderWidth(5)
-            .borderColor(UIColor.redColor())
+            .borderColor(UIColor.red)
             .cornerRadius(25)
             .wait()
             .borderWidth(0)
-            .borderColor(UIColor.blackColor())
+            .borderColor(UIColor.black)
             .cornerRadius(0)
             .run()
         
         label.cheetah
             .move(0, 30).duration(0.5).easeOutBack
-            .textColor(UIColor.redColor())
+            .textColor(UIColor.red)
             .wait(1)
             .move(0, -30).duration(0.5).easeOutBack
-            .textColor(UIColor.blueColor())
+            .textColor(UIColor.blue)
             .wait(1)
             .run()
 
@@ -183,7 +183,7 @@ class ViewController: UIViewController {
                 .run()
     }
     
-    @IBAction func didTapAnimate(sender: AnyObject) {
+    @IBAction func didTapAnimate(_ sender: AnyObject) {
         startAnimate()
     }
 

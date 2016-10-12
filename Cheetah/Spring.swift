@@ -27,11 +27,11 @@ class Spring {
         self.friction = friction
     }
     
-    private func accelerationFor(x: Double, _ v: Double) -> Double {
+    fileprivate func accelerationFor(_ x: Double, _ v: Double) -> Double {
         return (-tension * x) - (friction * v)
     }
     
-    private func proceedStep(stepSize: Double) {
+    fileprivate func proceedStep(_ stepSize: Double) {
         
         elapsed += stepSize
         
@@ -70,7 +70,7 @@ class Spring {
         }
     }
     
-    func proceed(dt: Double) {
+    func proceed(_ dt: Double) {
         var dt = dt
         while dt > maxDT {
             proceedStep(maxDT)

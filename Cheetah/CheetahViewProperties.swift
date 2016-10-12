@@ -29,7 +29,7 @@ class CheetahViewSizeProperty: CheetahCGSizeProperty {
         guard let view = view else {
             return
         }
-        view.bounds = CGRect(origin: CGPointZero, size: calculateCGSize(from: from, to: toCalc))
+        view.bounds = CGRect(origin: CGPoint.zero, size: calculateCGSize(from: from, to: toCalc))
     }
     
 }

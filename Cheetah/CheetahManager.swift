@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class CheetahManager {
+open class CheetahManager {
     
-    public static let sharedInstance = CheetahManager()
+    open static let sharedInstance = CheetahManager()
     
     var cheetahs = [UInt32 : Cheetah]()
     var counter: UInt32
@@ -23,7 +23,7 @@ public class CheetahManager {
     }
     
     // Add cheetah to manager
-    func add(cheetah: Cheetah) {
+    func add(_ cheetah: Cheetah) {
         
         objc_sync_enter(self)
         defer {
@@ -46,11 +46,11 @@ public class CheetahManager {
         if displayLink == nil {
             displayLink = CADisplayLink(target: self, selector: #selector(CheetahManager.update(_:)))
             lastLoopTime = CACurrentMediaTime()
-            displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+            displayLink?.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
         }
     }
     
-    @objc func update(displayLink: CADisplayLink) {
+    @objc func update(_ displayLink: CADisplayLink) {
         
         let dt = displayLink.timestamp - lastLoopTime
         defer {
@@ -75,22 +75,22 @@ public class CheetahManager {
         }
     }
     
-    public func pause() {
+    open func pause() {
         guard let displayLink = displayLink else {
             return
         }
-        displayLink.paused = true
+        displayLink.isPaused = true
     }
     
-    public func resume() {
+    open func resume() {
         guard let displayLink = displayLink else {
             return
         }
         lastLoopTime = CACurrentMediaTime()
-        displayLink.paused = false
+        displayLink.isPaused = false
     }
     
-    public func stop() {
+    open func stop() {
         guard let displayLink = displayLink else {
             return
         }

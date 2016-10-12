@@ -9,7 +9,7 @@
 import UIKit
 
 // CheetahProperty
-public class CheetahProperty {
+open class CheetahProperty {
     
     weak var view: UIView?
     weak var group: CheetahGroup?
@@ -25,7 +25,7 @@ public class CheetahProperty {
     var relative: Bool = false
     var transform: CATransform3D = CATransform3DIdentity
     
-    func proceed(dt: CFTimeInterval) -> Bool {
+    func proceed(_ dt: CFTimeInterval) -> Bool {
         self.dt = dt
         let end = delay + duration
         if elapsed >= end {
@@ -37,12 +37,12 @@ public class CheetahProperty {
             update()
         }
         if let spring = spring {
-            if let completion = completion where spring.ended {
+            if let completion = completion , spring.ended {
                 completion()
             }
             return spring.ended
         } else {
-            if let completion = completion where elapsed >= end {
+            if let completion = completion , elapsed >= end {
                 completion()
             }
             return elapsed >= end
@@ -63,37 +63,37 @@ public class CheetahProperty {
         // should be overriden
     }
     
-    func calculateCGFloat(from from: CGFloat, to: CGFloat) -> CGFloat {
+    func calculateCGFloat(from: CGFloat, to: CGFloat) -> CGFloat {
         if let spring = spring {
             spring.proceed(dt / duration)
             return from + (to-from) * CGFloat(spring.current)
         } else {
-            return easing(t: current, b: from, c: to-from)
+            return easing(current, from, to-from)
         }
     }
     
-    func calculateCGRect(from from: CGRect, to: CGRect) -> CGRect {
+    func calculateCGRect(from: CGRect, to: CGRect) -> CGRect {
         return CGRect(
             origin: calculateCGPoint(from: from.origin, to: to.origin),
             size: calculateCGSize(from: from.size, to: to.size)
         )
     }
     
-    func calculateCGPoint(from from: CGPoint, to: CGPoint) -> CGPoint {
+    func calculateCGPoint(from: CGPoint, to: CGPoint) -> CGPoint {
         return CGPoint(
             x: calculateCGFloat(from: from.x, to: to.x),
             y: calculateCGFloat(from: from.y, to: to.y)
         )
     }
     
-    func calculateCGSize(from from: CGSize, to: CGSize) -> CGSize {
+    func calculateCGSize(from: CGSize, to: CGSize) -> CGSize {
         return CGSize(
             width: calculateCGFloat(from: from.width, to: to.width),
             height: calculateCGFloat(from: from.height, to: to.height)
         )
     }
     
-    func calculateUIColor(from from: UIColor, to: UIColor) -> UIColor {
+    func calculateUIColor(from: UIColor, to: UIColor) -> UIColor {
         let fromRGBA = RGBA.fromUIColor(from)
         let toRGBA = RGBA.fromUIColor(to)
         return UIColor(
@@ -110,14 +110,14 @@ private struct RGBA {
     var green:CGFloat = 0
     var blue:CGFloat = 0
     var alpha:CGFloat = 0
-    static func fromUIColor(color:UIColor) -> RGBA {
+    static func fromUIColor(_ color:UIColor) -> RGBA {
         var rgba = RGBA()
         color.getRed(&rgba.red, green: &rgba.green, blue: &rgba.blue, alpha: &rgba.alpha)
         return rgba
     }
 }
 
-public class CheetahCGFloatProperty: CheetahProperty {
+open class CheetahCGFloatProperty: CheetahProperty {
     var from: CGFloat = 0
     var to: CGFloat = 0
     var toCalc: CGFloat = 0
@@ -130,10 +130,10 @@ public class CheetahCGFloatProperty: CheetahProperty {
     }
 }
 
-public class CheetahCGSizeProperty: CheetahProperty {
-    var from: CGSize = CGSizeZero
-    var to: CGSize = CGSizeZero
-    var toCalc: CGSize = CGSizeZero
+open class CheetahCGSizeProperty: CheetahProperty {
+    var from: CGSize = CGSize.zero
+    var to: CGSize = CGSize.zero
+    var toCalc: CGSize = CGSize.zero
     override func calc() {
         if relative {
             toCalc = CGSize(width: from.width+to.width, height: from.height+to.height)
@@ -143,10 +143,10 @@ public class CheetahCGSizeProperty: CheetahProperty {
     }
 }
 
-public class CheetahCGPointProperty: CheetahProperty {
-    var from: CGPoint = CGPointZero
-    var to: CGPoint = CGPointZero
-    var toCalc: CGPoint = CGPointZero
+open class CheetahCGPointProperty: CheetahProperty {
+    var from: CGPoint = CGPoint.zero
+    var to: CGPoint = CGPoint.zero
+    var toCalc: CGPoint = CGPoint.zero
     override func calc() {
         if relative {
             toCalc = CGPoint(x: from.x+to.x, y: from.y+to.y)
@@ -156,10 +156,10 @@ public class CheetahCGPointProperty: CheetahProperty {
     }
 }
 
-public class CheetahCGRectProperty: CheetahProperty {
-    var from: CGRect = CGRectZero
-    var to: CGRect = CGRectZero
-    var toCalc: CGRect = CGRectZero
+open class CheetahCGRectProperty: CheetahProperty {
+    var from: CGRect = CGRect.zero
+    var to: CGRect = CGRect.zero
+    var toCalc: CGRect = CGRect.zero
     override func calc() {
         if relative {
             toCalc = CGRect(x: from.origin.x+to.origin.x, y: from.origin.y+to.origin.y, width: from.width+to.width, height: from.height+to.height)
@@ -169,7 +169,7 @@ public class CheetahCGRectProperty: CheetahProperty {
     }
 }
 
-public class CheetahUIColorProperty: CheetahProperty {
+open class CheetahUIColorProperty: CheetahProperty {
     var from: UIColor!
     var to: UIColor!
     var toCalc: UIColor!
