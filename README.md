@@ -2,7 +2,7 @@ Cheetah
 ======
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
-![Pod Version](https://img.shields.io/badge/Pod-0.4.0-blue.svg)
+![Pod Version](https://img.shields.io/badge/Pod-0.4.1-blue.svg)
 ![Swift Version](https://img.shields.io/badge/Swift-3.0-orange.svg)
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 ![Plaforms](https://img.shields.io/badge/Platform-iOS-lightgrey.svg)
