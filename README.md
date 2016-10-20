@@ -1,6 +1,12 @@
 Cheetah
 ======
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
+![Pod Version](https://img.shields.io/badge/Pod-0.4.0-blue.svg)
+![Swift Version](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)
+![Plaforms](https://img.shields.io/badge/Platform-iOS-lightgrey.svg)
+
 Cheetah is an animation utility on iOS with Swift. Cheetah can animate any properties
 since Cheetah uses simple CADisplayLink run loop to change animated properties.
 
@@ -8,7 +14,7 @@ Requirements
 ----
 
 - iOS 8.0~
-- Swift 2.0
+- Swift 3.0
 
 Features
 ----
