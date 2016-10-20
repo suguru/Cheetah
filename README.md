@@ -14,6 +14,7 @@ Requirements
 ----
 
 - iOS 8.0~
+- tvOS 9.0~
 - Swift 3.0
 
 Features
