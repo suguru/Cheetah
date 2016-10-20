@@ -12,6 +12,10 @@
 		6F96CF931B8437310014443A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F96CF911B8437310014443A /* Main.storyboard */; };
 		6F96CF951B8437310014443A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F96CF941B8437310014443A /* Assets.xcassets */; };
 		6F96CF981B8437310014443A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F96CF961B8437310014443A /* LaunchScreen.storyboard */; };
+		BB6FD04C1DB8A18400456086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FD04B1DB8A18400456086 /* AppDelegate.swift */; };
+		BB6FD04E1DB8A18400456086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FD04D1DB8A18400456086 /* ViewController.swift */; };
+		BB6FD0511DB8A18400456086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6FD04F1DB8A18400456086 /* Main.storyboard */; };
+		BB6FD0531DB8A18400456086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB6FD0521DB8A18400456086 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,20 @@
 			remoteGlobalIDString = 6F96CF661B8436F80014443A;
 			remoteInfo = Cheetah;
 		};
+		BB6FD0681DB8A43A00456086 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F96CF9F1B8437390014443A /* Cheetah.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BB6FD05F1DB8A40E00456086;
+			remoteInfo = CheetahTV;
+		};
+		BB6FD06B1DB8A43A00456086 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F96CF9F1B8437390014443A /* Cheetah.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BB6FD0601DB8A40E00456086;
+			remoteInfo = CheetahTV;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +65,23 @@
 		6F96CF971B8437310014443A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F96CF991B8437310014443A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F96CF9F1B8437390014443A /* Cheetah.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cheetah.xcodeproj; path = ../Cheetah.xcodeproj; sourceTree = "<group>"; };
+		BB6FD0491DB8A18400456086 /* CheetahExampleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheetahExampleTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB6FD04B1DB8A18400456086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB6FD04D1DB8A18400456086 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB6FD0501DB8A18400456086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB6FD0521DB8A18400456086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB6FD0541DB8A18400456086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6F96CF871B8437310014443A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6FD0461DB8A18400456086 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				6F96CF8C1B8437310014443A /* CheetahExample */,
+				BB6FD04A1DB8A18400456086 /* CheetahExampleTV */,
 				6F96CF8B1B8437310014443A /* Products */,
 				6F96CF9F1B8437390014443A /* Cheetah.xcodeproj */,
 			);
@@ -73,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				6F96CF8A1B8437310014443A /* CheetahExample.app */,
+				BB6FD0491DB8A18400456086 /* CheetahExampleTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,8 +128,21 @@
 			children = (
 				6F96CFA51B8437390014443A /* Cheetah.framework */,
 				6F96CFA71B8437390014443A /* CheetahTests.xctest */,
+				BB6FD06C1DB8A43A00456086 /* CheetahTV.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BB6FD04A1DB8A18400456086 /* CheetahExampleTV */ = {
+			isa = PBXGroup;
+			children = (
+				BB6FD04B1DB8A18400456086 /* AppDelegate.swift */,
+				BB6FD04D1DB8A18400456086 /* ViewController.swift */,
+				BB6FD04F1DB8A18400456086 /* Main.storyboard */,
+				BB6FD0521DB8A18400456086 /* Assets.xcassets */,
+				BB6FD0541DB8A18400456086 /* Info.plist */,
+			);
+			path = CheetahExampleTV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,18 +166,42 @@
 			productReference = 6F96CF8A1B8437310014443A /* CheetahExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BB6FD0481DB8A18400456086 /* CheetahExampleTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB6FD0581DB8A18400456086 /* Build configuration list for PBXNativeTarget "CheetahExampleTV" */;
+			buildPhases = (
+				BB6FD0451DB8A18400456086 /* Sources */,
+				BB6FD0461DB8A18400456086 /* Frameworks */,
+				BB6FD0471DB8A18400456086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB6FD0691DB8A43A00456086 /* PBXTargetDependency */,
+			);
+			name = CheetahExampleTV;
+			productName = CheetahExampleTV;
+			productReference = BB6FD0491DB8A18400456086 /* CheetahExampleTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6F96CF821B8437310014443A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Suguru Namura";
 				TargetAttributes = {
 					6F96CF891B8437310014443A = {
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 0800;
+					};
+					BB6FD0481DB8A18400456086 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4X6KFKQ3S7;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -155,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				6F96CF891B8437310014443A /* CheetahExample */,
+				BB6FD0481DB8A18400456086 /* CheetahExampleTV */,
 			);
 		};
 /* End PBXProject section */
@@ -174,6 +245,13 @@
 			remoteRef = 6F96CFA61B8437390014443A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		BB6FD06C1DB8A43A00456086 /* CheetahTV.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CheetahTV.framework;
+			remoteRef = BB6FD06B1DB8A43A00456086 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -184,6 +262,15 @@
 				6F96CF981B8437310014443A /* LaunchScreen.storyboard in Resources */,
 				6F96CF951B8437310014443A /* Assets.xcassets in Resources */,
 				6F96CF931B8437310014443A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6FD0471DB8A18400456086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6FD0531DB8A18400456086 /* Assets.xcassets in Resources */,
+				BB6FD0511DB8A18400456086 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +286,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB6FD0451DB8A18400456086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6FD04E1DB8A18400456086 /* ViewController.swift in Sources */,
+				BB6FD04C1DB8A18400456086 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -206,6 +302,11 @@
 			isa = PBXTargetDependency;
 			name = Cheetah;
 			targetProxy = 6F96CFBA1B8468DD0014443A /* PBXContainerItemProxy */;
+		};
+		BB6FD0691DB8A43A00456086 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CheetahTV;
+			targetProxy = BB6FD0681DB8A43A00456086 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -224,6 +325,14 @@
 				6F96CF971B8437310014443A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BB6FD04F1DB8A18400456086 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB6FD0501DB8A18400456086 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,6 +450,47 @@
 			};
 			name = Release;
 		};
+		BB6FD0551DB8A18400456086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 4X6KFKQ3S7;
+				INFOPLIST_FILE = CheetahExampleTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.suguru.CheetahExampleTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		BB6FD0561DB8A18400456086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 4X6KFKQ3S7;
+				INFOPLIST_FILE = CheetahExampleTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.suguru.CheetahExampleTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +511,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BB6FD0581DB8A18400456086 /* Build configuration list for PBXNativeTarget "CheetahExampleTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB6FD0551DB8A18400456086 /* Debug */,
+				BB6FD0561DB8A18400456086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

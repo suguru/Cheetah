@@ -22,6 +22,19 @@
 		6F96CFC11B85674A0014443A /* CheetahLayerProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFC01B85674A0014443A /* CheetahLayerProperties.swift */; };
 		6F96CFC31B85B8690014443A /* CheetahGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFC21B85B8690014443A /* CheetahGroup.swift */; };
 		6FD01F891BB3FE4900FF26E5 /* CheetahConstraintProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD01F881BB3FE4900FF26E5 /* CheetahConstraintProperties.swift */; };
+		BB6FD0641DB8A40E00456086 /* CheetahTV.h in Headers */ = {isa = PBXBuildFile; fileRef = BB6FD0621DB8A40E00456086 /* CheetahTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB6FD06D1DB8A46500456086 /* Cheetah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFA81B84374E0014443A /* Cheetah.swift */; };
+		BB6FD06E1DB8A46500456086 /* CheetahManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89921B1B8832F800A92F18 /* CheetahManager.swift */; };
+		BB6FD06F1DB8A46500456086 /* CheetahGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFC21B85B8690014443A /* CheetahGroup.swift */; };
+		BB6FD0701DB8A46500456086 /* CheetahProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFB21B8445560014443A /* CheetahProperties.swift */; };
+		BB6FD0711DB8A46500456086 /* CheetahConstraintProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD01F881BB3FE4900FF26E5 /* CheetahConstraintProperties.swift */; };
+		BB6FD0721DB8A46500456086 /* CheetahLayerProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFC01B85674A0014443A /* CheetahLayerProperties.swift */; };
+		BB6FD0731DB8A46500456086 /* CheetahViewProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFBE1B848CA90014443A /* CheetahViewProperties.swift */; };
+		BB6FD0741DB8A46500456086 /* CheetahLabelProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992191B87762200A92F18 /* CheetahLabelProperties.swift */; };
+		BB6FD0751DB8A46500456086 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8992131B86066400A92F18 /* Bezier.swift */; };
+		BB6FD0761DB8A46500456086 /* Easings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFB71B845CDA0014443A /* Easings.swift */; };
+		BB6FD0771DB8A46500456086 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6734011B947CB70067B8DA /* Spring.swift */; };
+		BB6FD0781DB8A46500456086 /* UIView+CheetahAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96CFAA1B8437A10014443A /* UIView+CheetahAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,9 @@
 		6F96CFC01B85674A0014443A /* CheetahLayerProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheetahLayerProperties.swift; sourceTree = "<group>"; };
 		6F96CFC21B85B8690014443A /* CheetahGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheetahGroup.swift; sourceTree = "<group>"; };
 		6FD01F881BB3FE4900FF26E5 /* CheetahConstraintProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheetahConstraintProperties.swift; sourceTree = "<group>"; };
+		BB6FD0601DB8A40E00456086 /* CheetahTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheetahTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB6FD0621DB8A40E00456086 /* CheetahTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheetahTV.h; sourceTree = "<group>"; };
+		BB6FD0631DB8A40E00456086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB6FD05C1DB8A40E00456086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,6 +102,7 @@
 			children = (
 				6F96CF691B8436F80014443A /* Cheetah */,
 				6F96CF751B8436F80014443A /* CheetahTests */,
+				BB6FD0611DB8A40E00456086 /* CheetahTV */,
 				6F96CF681B8436F80014443A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +112,7 @@
 			children = (
 				6F96CF671B8436F80014443A /* Cheetah.framework */,
 				6F96CF711B8436F80014443A /* CheetahTests.xctest */,
+				BB6FD0601DB8A40E00456086 /* CheetahTV.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +147,15 @@
 			path = CheetahTests;
 			sourceTree = "<group>";
 		};
+		BB6FD0611DB8A40E00456086 /* CheetahTV */ = {
+			isa = PBXGroup;
+			children = (
+				BB6FD0621DB8A40E00456086 /* CheetahTV.h */,
+				BB6FD0631DB8A40E00456086 /* Info.plist */,
+			);
+			path = CheetahTV;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -130,6 +164,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F96CF6B1B8436F80014443A /* Cheetah.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6FD05D1DB8A40E00456086 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6FD0641DB8A40E00456086 /* CheetahTV.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +214,24 @@
 			productReference = 6F96CF711B8436F80014443A /* CheetahTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BB6FD05F1DB8A40E00456086 /* CheetahTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB6FD0651DB8A40E00456086 /* Build configuration list for PBXNativeTarget "CheetahTV" */;
+			buildPhases = (
+				BB6FD05B1DB8A40E00456086 /* Sources */,
+				BB6FD05C1DB8A40E00456086 /* Frameworks */,
+				BB6FD05D1DB8A40E00456086 /* Headers */,
+				BB6FD05E1DB8A40E00456086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CheetahTV;
+			productName = CheetahTV;
+			productReference = BB6FD0601DB8A40E00456086 /* CheetahTV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,6 +250,11 @@
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 0800;
 					};
+					BB6FD05F1DB8A40E00456086 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4X6KFKQ3S7;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 6F96CF611B8436F80014443A /* Build configuration list for PBXProject "Cheetah" */;
@@ -206,6 +271,7 @@
 			targets = (
 				6F96CF661B8436F80014443A /* Cheetah */,
 				6F96CF701B8436F80014443A /* CheetahTests */,
+				BB6FD05F1DB8A40E00456086 /* CheetahTV */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +285,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6F96CF6F1B8436F80014443A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6FD05E1DB8A40E00456086 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -252,6 +325,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F96CF771B8436F80014443A /* CheetahTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6FD05B1DB8A40E00456086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6FD06D1DB8A46500456086 /* Cheetah.swift in Sources */,
+				BB6FD06E1DB8A46500456086 /* CheetahManager.swift in Sources */,
+				BB6FD06F1DB8A46500456086 /* CheetahGroup.swift in Sources */,
+				BB6FD0701DB8A46500456086 /* CheetahProperties.swift in Sources */,
+				BB6FD0711DB8A46500456086 /* CheetahConstraintProperties.swift in Sources */,
+				BB6FD0721DB8A46500456086 /* CheetahLayerProperties.swift in Sources */,
+				BB6FD0731DB8A46500456086 /* CheetahViewProperties.swift in Sources */,
+				BB6FD0741DB8A46500456086 /* CheetahLabelProperties.swift in Sources */,
+				BB6FD0751DB8A46500456086 /* Bezier.swift in Sources */,
+				BB6FD0761DB8A46500456086 /* Easings.swift in Sources */,
+				BB6FD0771DB8A46500456086 /* Spring.swift in Sources */,
+				BB6FD0781DB8A46500456086 /* UIView+CheetahAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +513,57 @@
 			};
 			name = Release;
 		};
+		BB6FD0661DB8A40E00456086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4X6KFKQ3S7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CheetahTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.suguru.CheetahTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		BB6FD0671DB8A40E00456086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4X6KFKQ3S7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CheetahTV/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.suguru.CheetahTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -450,6 +593,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BB6FD0651DB8A40E00456086 /* Build configuration list for PBXNativeTarget "CheetahTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB6FD0661DB8A40E00456086 /* Debug */,
+				BB6FD0671DB8A40E00456086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
