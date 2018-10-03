@@ -46,7 +46,7 @@ open class CheetahManager {
         if displayLink == nil {
             displayLink = CADisplayLink(target: self, selector: #selector(CheetahManager.update(_:)))
             lastLoopTime = CACurrentMediaTime()
-            displayLink?.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+            displayLink?.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
         }
     }
     
